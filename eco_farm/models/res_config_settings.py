@@ -8,9 +8,9 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     # Groups
-    group_ecofarm_manager = fields.Boolean(
+    group_eco_farm_manager = fields.Boolean(
         string='Manage Ecosoft FARM',
-        implied_group='ecofarm.group_ecofarm_manager',
+        implied_group='eco_farm.group_eco_farm_manager',
     )
     # OCA/l10n-thailand
     module_account_create_tax_cash_basis_entry_hook = fields.Boolean(
@@ -37,33 +37,63 @@ class ResConfigSettings(models.TransientModel):
     module_account_financial_report = fields.Boolean(
         string='OCA Financial Reports',
     )
-    account_financial_report
     # OCA/account-invoicing
     module_account_billing = fields.Boolean(
         string='Account Billing',
     )
-    account_invoice_reimbursable
-    account_menu_invoice_refund
+    module_account_invoice_reimbursable = fields.Boolean(
+        string='Invoice Remibursable',
+    )
+    module_account_menu_invoice_refund = fields.Boolean(
+        string='Netting Invoice/Refund',
+    )
     # OCA/acount-financial-tools
     module_account_type_menu = fields.Boolean(
         string='Account Menus',
-        default=True,
+        readonly=True,
     )
-    account_asset_management
-    account_document_reversal
-    account_fiscal_year
-    account_invoice_refund_link
-    account_payment_intransit
-    account_payment_intransit_deduction
-    account_payment_intransit_reversal
+    module_account_asset_management = fields.Boolean(
+        string='Asset Management',
+    )
+    module_account_document_reversal = fields.Boolean(
+        string='Account Document Reversal',
+    )
+    module_account_fiscal_year = fields.Boolean(
+        string='Fiscal Year',
+        readonly=True,
+    )
+    module_account_invoice_refund_link = fields.Boolean(
+        string='Invoice/Refund Linkage',
+    )
+    module_account_payment_intransit = fields.Boolean(
+        string='Payment Intransit',
+    )
+    module_account_payment_intransit_deduction = fields.Boolean(
+        string='Payment Intransit Multi Deduction',
+    )
+    module_account_payment_intransit_reversal = fields.Boolean(
+        string='Payment Intransit Document Reversal',
+    )
     # OCA/credit-control
-    account_financial_risk
-    sale_financial_risk
-    stock_financial_risk
+    module_account_financial_risk = fields.Boolean(
+        string='Account Financail Risk',
+    )
+    module_sale_financial_risk = fields.Boolean(
+        string='Sales Financial Risk',
+    )
+    module_stock_financial_risk = fields.Boolean(
+        string='Stock Financial Risk',
+    )
     # OCA/hr
-    hr_expense_advance_clearing
-    hr_expense_invoice
-    hr_expense_payment_difference
+    module_hr_expense_advance_clearing = fields.Boolean(
+        string='HR Expense Advance/Clearing',
+    )
+    module_hr_expense_invoice = fields.Boolean(
+        string='HR Expense Invoicing',
+    )
+    module_hr_expense_payment_difference = fields.Boolean(
+        string='HR Expense Payment Diff',
+    )
     # OCA/manufacture
     module_stock_picking_product_kit_helper = fields.Boolean(
         string='Stock Product Kit Helper',
@@ -71,55 +101,67 @@ class ResConfigSettings(models.TransientModel):
     # OCA/partner-contact
     module_partner_fax = fields.Boolean(
         string='Add Partner Fax Number',
-        default=True,
+        readonly=True,
     )
     # OCA/product-attribute
-    product_brand
-    product_secondary_unit
-    product_sequence
+    module_product_brand = fields.Boolean(
+        string='Product Brands',
+    )
+    module_product_secondary_unit = fields.Boolean(
+        string='Product Secondary Unit',
+    )
+    module_product_sequence = fields.Boolean(
+        string='Product Sequence',
+    )
     # OCA/purchase-workflow
     module_purchase_deposit = fields.Boolean(
         string='Purchase Deposit',
     )
-    purchase_discount
-    purchase_order_secondary_unit
+    module_purchase_discount = fields.Boolean(
+        string='Purchase Discount',
+    )
+    module_purchase_order_secondary_unit = fields.Boolean(
+        string='Purchase Order Secondary Unit',
+    )
     # OCA/reporting-engine
     module_report_xlsx = fields.Boolean(
         string='Report XLSX',
         readonly=True,
     )
-    report_qweb_element_page_visibility
-    report_xlsx
+    module_report_qweb_element_page_visibility = fields.Boolean(
+        string='QWeb Element Page Visibility',
+        readonly=True,
+    )
     # OCA/sale-workflow
-    sale_order_line_sequence
+    module_sale_order_line_sequence = fields.Boolean(
+        string='Sales Order Line Sequence',
+    )
     # OCA/server-tools
     module_auto_backup = fields.Boolean(
         string='Auto Backup Database',
-        default=True,
     )
     module_excel_import_export = fields.Boolean(
         string='Excel Import Export',
-        readonly=True,
     )
     module_dbfilter_from_header = fields.Boolean(
         string='Filter DB From URL',
     )
     module_module_analysis = fields.Boolean(
         string='Module Analysis',
-        default=True,
     )
-    auto_backup
-    dbfilter_from_header
     # OCA/server-ux
     module_date_range = fields.Boolean(
         string='Date Range',
         readonly=True,
     )
-    mass_editing
+    module_mass_editing = fields.Boolean(
+        string='Mass Editing',
+    )
     # OCA/stock-logistics-warehouse
-    stock_secondary_unit
+    module_stock_secondary_unit = fields.Boolean(
+        string='Stock Secondary Unit',
+    )
     # OCA/web
     module_web_m2x_options = fields.Boolean(
         string='M2X Options',
-        default=True,
     )
