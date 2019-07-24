@@ -1,7 +1,7 @@
 # Copyright 2019 Ecosoft Co., Ltd (http://ecosoft.co.th/)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ResConfigSettings(models.TransientModel):
@@ -76,7 +76,7 @@ class ResConfigSettings(models.TransientModel):
     )
     # OCA/credit-control
     module_account_financial_risk = fields.Boolean(
-        string='Account Financail Risk',
+        string='Account Financial Risk',
     )
     module_sale_financial_risk = fields.Boolean(
         string='Sales Financial Risk',
@@ -135,6 +135,9 @@ class ResConfigSettings(models.TransientModel):
     # OCA/sale-workflow
     module_sale_order_line_sequence = fields.Boolean(
         string='Sales Order Line Sequence',
+    )
+    module_sale_invoice_plan = fields.Boolean(
+        string='Sales Invoice Plan',
     )
     # OCA/server-tools
     module_auto_backup = fields.Boolean(

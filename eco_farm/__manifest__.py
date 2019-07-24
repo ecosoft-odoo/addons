@@ -6,12 +6,12 @@
     'version': '12.0.1.0.0',
     'category': 'Tools',
     'website': 'https://github.com/ecosoft-odoo/addons',
-    'author': 'Ecosoft',
+    'author': 'Odoo Community Association (OCA),Ecosoft',
     'license': 'AGPL-3',
-    'application': False,
+    'application': True,
     'installable': True,
     'depends': [
-        'base',
+        'base_setup',
     ],
     'data': [
         'security/res_groups.xml',
